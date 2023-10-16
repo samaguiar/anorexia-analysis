@@ -7,24 +7,29 @@ The data was retrieved from <a href = "https://stat4ds.rwth-aachen.de/data/">Ind
 I created a descriptive graph and statistics, as well as, an 95% confidence interval for the 17 families that received treatment from Anorexia data file using the code below:
 
 #### Input ####
+```
 #set path to working directory
 setwd("~/Desktop/university-of-the-cumberlands/R")
-
+```
+```
 #create data set
 anorexiaData <- read.table("Anorexia.txt", header = TRUE)
-
+```
+```
 #create new data fram with individual values (i.e: "c", "f", and "cb")
 anorexiaC = anorexiaData[anorexiaData$therapy == "c",]
 anorexiaF = anorexiaData[anorexiaData$therapy == "f",]
 anorexiaCB = anorexiaData[anorexiaData$therapy == "cb",]
-
+```
+```
 #create histogram for  anorexiaF
 #note: I changed the bins from 5 to 10 to compare how the bins changed the visualization of the distribution
 hist(anorexiaF$before, main = "Weights of Patients Before Reciving Treatment",
      xlab = "Weight in lbs", breaks = 10, xlim = c(65,100), col = "pink")
 hist(anorexiaF$after, main = "Weights of Patients after Reciving Treatment",
      xlab = "Weight in lbs", breaks = 10, xlim = c(70,110), col="lightgreen")
-
+```
+```
 #determine population mean and standard deviation for before and after
 meanBefore = mean(anorexiaF$before)
 messageMeanBefore <- paste0("The population mean is for the patients before 
@@ -50,13 +55,15 @@ messageStdevAfter <- paste0("The population standard deviation for
                              the patients after treatment is ", 
                              pop_stdevAfter, '.')
 print(messageStdevAfter)
-
+```
+```
 #compute confidence interval for before and after treatment
 beforeInt <- t.test(anorexiaF$before, conf.level = 0.95)
 beforeInt
-
+```
 #### Output ####
 > #determine population mean and standard deviation for before and after
+```
 [1] "The population mean is for the patients before treatment is 83.2294117647059."
 
 [1] "The population mean is for the patients before treatment is 90.4941176470588."
@@ -64,10 +71,10 @@ beforeInt
 [1] "The population standard deviation for  the patients before treatment is 4.86690682126958."
 
 [1] "The population standard deviation for the patients after treatment is 8.22202712862261."
-
+```
 > #compute confidence interval for before and after treatment
 > beforeInt
-
+```
 	One Sample t-test
 
 data:  anorexiaF$before
@@ -78,9 +85,9 @@ alternative hypothesis: true mean is not equal to 0
 sample estimates:
 mean of x 
  83.22941 
-
+```
 > afterInt
-
+```
 	One Sample t-test
 
 data:  anorexiaF$after
@@ -91,6 +98,7 @@ alternative hypothesis: true mean is not equal to 0
 sample estimates:
 mean of x 
  90.49412 
+```
 
 ### Interpretation ###
 Based on the histogram, the weights of the patients before treatment are relatively normal, as the graph shows a bell-shaped curve. To confirm this, I changed the bin widths from 5 to 10 to ensure that the curve was relatively normal. I calculated the mean and the median to compare and found the mean of the before weights was 83.2 lbs and the median was 83.3 lbs, so I confirmed the distribution was relatively normal. Due to the normal curve, the standard deviation of 4.86 lbs, which is relatively small. 
