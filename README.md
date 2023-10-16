@@ -1,3 +1,8 @@
+## Anoreixa Analysis ##
+
+### The Data ###
+The data was retrieved from <a href = "https://stat4ds.rwth-aachen.de/data/">Index of Data Sets</a>. This project was created for MDSD-531: Statistics for Data Science at the University of the Cumberlands.
+
 I created a descriptive graph and statistics, as well as, an 95% confidence interval for the 17 families that received treatment from Anorexia data file using the code below:
 
 Input
