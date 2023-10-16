@@ -3,9 +3,10 @@
 ### The Data ###
 The data was retrieved from <a href = "https://stat4ds.rwth-aachen.de/data/">Index of Data Sets</a>. This project was created for MDSD-531: Statistics for Data Science at the University of the Cumberlands.
 
+### Setting up the Data ###
 I created a descriptive graph and statistics, as well as, an 95% confidence interval for the 17 families that received treatment from Anorexia data file using the code below:
 
-Input
+#### Input ####
 #set path to working directory
 setwd("~/Desktop/university-of-the-cumberlands/R")
 
@@ -54,13 +55,7 @@ print(messageStdevAfter)
 beforeInt <- t.test(anorexiaF$before, conf.level = 0.95)
 beforeInt
 
-Output
-
-
-
-
-
-
+#### Output ####
 > #determine population mean and standard deviation for before and after
 [1] "The population mean is for the patients before treatment is 83.2294117647059."
 
@@ -97,6 +92,7 @@ sample estimates:
 mean of x 
  90.49412 
 
+### Interpretation ###
 Based on the histogram, the weights of the patients before treatment are relatively normal, as the graph shows a bell-shaped curve. To confirm this, I changed the bin widths from 5 to 10 to ensure that the curve was relatively normal. I calculated the mean and the median to compare and found the mean of the before weights was 83.2 lbs and the median was 83.3 lbs, so I confirmed the distribution was relatively normal. Due to the normal curve, the standard deviation of 4.86 lbs, which is relatively small. 
 
 The histogram for the weights after patients still looked similar to a bell-shaped curve, however, there is a gap in between the lower values and the majority of the data makes the distribution more left skewed. I confirmed the distribution by calculating the mean and median and found that the mean was 90.49 lbs and the median was 92.5 lbs. Since the mean was less than the median, I confirmed that the distribution of the weights after treatment was left skewed. The standard deviation for the weight after treatment, 8.22 lbs, was double that of the weight before treatment, suggesting there was more variability in the success of the treatment of patients gaining weight. 
